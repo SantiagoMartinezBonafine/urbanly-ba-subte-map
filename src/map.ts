@@ -2,9 +2,8 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 // Importación de datos
-import estaciones from "./data/estaciones_subte.json";
-import lineas from "./data/lineas_subte.json";
-
+import estaciones from "./data/estacionesdesubte.json";
+import lineas from "./data/reddesubterraneo.json";
 export const initMap = () => {
   const map = new maplibregl.Map({
     container: "map",
@@ -61,7 +60,6 @@ export const initMap = () => {
       },
     });
 
-    // Cambiar el cursor al pasar por una estación
     map.on("mouseenter", "estaciones-layer", () => {
       map.getCanvas().style.cursor = "pointer";
     });
@@ -70,7 +68,6 @@ export const initMap = () => {
       map.getCanvas().style.cursor = "";
     });
 
-    // Mostrar nombre al hacer click
     map.on("click", "estaciones-layer", (e: any) => {
       const coordinates = e.features[0].geometry.coordinates.slice();
       const name = e.features[0].properties.name;
