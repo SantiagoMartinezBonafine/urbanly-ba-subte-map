@@ -29,7 +29,7 @@ export const initMap = () => {
     },
     center: [-58.4173, -34.6118],
     zoom: 12,
-    pitch: 0, // Iniciamos en 2D por defecto
+    pitch: 0,
     bearing: 0,
     maxZoom: 18,
     attributionControl: false,
@@ -37,7 +37,6 @@ export const initMap = () => {
 
   let currentPopup: maplibregl.Popup | null = null;
 
-  // --- Funciones Auxiliares (Popups, Búsqueda, etc.) ---
   const showStationPopup = (feature: any) => {
     if (currentPopup) currentPopup.remove();
 
@@ -122,8 +121,8 @@ export const initMap = () => {
     map.flyTo({
       center: coords,
       zoom: 16.5,
-      pitch: 50,
-      bearing: -15,
+      pitch: 45,
+      bearing: 10,
       speed: 0.8,
       curve: 1.5,
       essential: true,
@@ -200,12 +199,10 @@ export const initMap = () => {
     });
   };
 
-  // --- Eventos del Mapa ---
   map.on("load", () => {
     initSearch();
     initLineNav();
 
-    // Controles de Zoom
     document
       .getElementById("btn-zoom-in")
       ?.addEventListener("click", () => map.zoomIn());
@@ -213,7 +210,6 @@ export const initMap = () => {
       .getElementById("btn-zoom-out")
       ?.addEventListener("click", () => map.zoomOut());
 
-    // Brújula / Reset
     document.getElementById("btn-compass")?.addEventListener("click", () => {
       if (currentPopup) {
         currentPopup.remove();
@@ -233,8 +229,8 @@ export const initMap = () => {
 
       if (currentPitch < 30) {
         map.flyTo({
-          pitch: 60,
-          bearing: -10,
+          pitch: 45,
+          bearing: 10,
           duration: 1500,
           essential: true,
         });
@@ -250,7 +246,6 @@ export const initMap = () => {
       }
     });
 
-    // Capas de Datos
     map.addSource("subte-lineas", { type: "geojson", data: lineas as any });
     map.addLayer({
       id: "lineas-layer",
