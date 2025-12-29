@@ -1,6 +1,5 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-// Asegúrate que las rutas sean correctas según tu estructura de carpetas
 import estaciones from "./data/estacionesdesubte.json";
 import lineas from "./data/reddesubterraneo.json";
 
@@ -36,11 +35,11 @@ export const initMap = () => {
 
   let currentPopup: maplibregl.Popup | null = null;
 
+  // --- FUNCIÓN: Mostrar Popup de Estación ---
   const showStationPopup = (feature: any) => {
     if (currentPopup) currentPopup.remove();
 
     const props = feature.properties;
-    // Hacemos una copia de las coordenadas para no mutar el original
     const coords = feature.geometry.coordinates.slice();
     const lineaActual = props.LINEA;
     const currentID = Number(props.ID);
@@ -48,31 +47,21 @@ export const initMap = () => {
     const direccion = props.DIRECCION || "Ubicación aproximada";
     const infoExtra = props.INFO || "";
 
-    // ---------------------------------------------------------
-    // CORRECCIÓN PRINCIPAL: BLINDAJE DE ARRAYS
-    // ---------------------------------------------------------
-    // MapLibre a veces convierte arrays en strings (ej: "['A', 'B']")
-    // Aquí detectamos eso y lo convertimos de vuelta a un Array real.
+    // CORRECCIÓN: Parseo seguro de combinaciones
     let combinaciones = props.COMBINACIONES;
-
     if (typeof combinaciones === "string") {
       try {
         combinaciones = JSON.parse(combinaciones);
       } catch (e) {
-        // Si falla el parseo (ej: string vacío o inválido), array vacío
         combinaciones = [];
       }
     }
-
-    // Doble chequeo: si es null, undefined o no es array, poner array vacío
     if (!Array.isArray(combinaciones)) {
       combinaciones = [];
     }
-    // ---------------------------------------------------------
 
     // Lógica de navegación (Anterior / Siguiente)
-    // NOTA: Esto ordena por ID. Si tus IDs en el JSON no siguen el orden geográfico,
-    // los botones saltarán de forma extraña.
+    // Ordenamos por ID para saber cuál es la siguiente en el recorrido
     const estacionesDeLinea = (estaciones as any).features
       .filter((f: any) => f.properties.LINEA === lineaActual)
       .sort(
@@ -90,14 +79,12 @@ export const initMap = () => {
         ? estacionesDeLinea[currentIndex + 1]
         : null;
 
-    // Construcción del HTML
+    // Construcción del HTML del Popup
     const popupDiv = document.createElement("div");
     popupDiv.className = "popup-container";
     const colorLinea = LINE_COLORS[lineaActual] || "#333";
 
     let combinacionesHTML = "";
-
-    // Ahora es seguro usar .length y .map porque garantizamos que es un array arriba
     if (combinaciones.length > 0) {
       combinacionesHTML = `<div class="popup-connections">
         <span class="conn-label">Combina con:</span>
@@ -145,7 +132,7 @@ export const initMap = () => {
       </div>
     `;
 
-    // Listeners de los botones del popup
+    // Event Listeners para botones Anterior/Siguiente
     const btnPrev = popupDiv.querySelector("#btn-prev");
     const btnNext = popupDiv.querySelector("#btn-next");
 
@@ -156,10 +143,9 @@ export const initMap = () => {
       btnNext.addEventListener("click", () => showStationPopup(nextStation));
     }
 
-    // Animación de cámara hacia la estación
+    // Animación de cámara y creación del Popup
     map.flyTo({ center: coords, zoom: 15.5, speed: 1.5, curve: 1.2 });
 
-    // Crear y añadir el popup al mapa
     currentPopup = new maplibregl.Popup({
       closeButton: false,
       offset: 15,
@@ -170,6 +156,7 @@ export const initMap = () => {
       .addTo(map);
   };
 
+  // --- FUNCIÓN: Buscador ---
   const initSearch = () => {
     const input = document.getElementById("station-search") as HTMLInputElement;
     const resultsContainer = document.getElementById("search-results");
@@ -218,9 +205,54 @@ export const initMap = () => {
     });
   };
 
+  // --- FUNCIÓN: Navegación Lateral por Líneas (NUEVO) ---
+  const initLineNav = () => {
+    const buttons = document.querySelectorAll(".line-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const lineaSeleccionada = (e.target as HTMLElement).getAttribute(
+          "data-line"
+        );
+
+        // 1. Filtrar estaciones de la línea
+        const estacionesLinea = (estaciones as any).features.filter(
+          (f: any) => f.properties.LINEA === lineaSeleccionada
+        );
+
+        if (estacionesLinea.length === 0) return;
+
+        // 2. Ordenar por ID para encontrar la cabecera (ID más bajo)
+        estacionesLinea.sort(
+          (a: any, b: any) => Number(a.properties.ID) - Number(b.properties.ID)
+        );
+
+        const primeraEstacion = estacionesLinea[0];
+        const coords = primeraEstacion.geometry.coordinates;
+
+        // 3. Volar hacia la estación
+        map.flyTo({
+          center: coords,
+          zoom: 16,
+          speed: 1.2,
+          curve: 1.42,
+          pitch: 45, // Efecto 3D
+        });
+
+        // 4. Abrir popup automáticamente al llegar (feedback visual)
+        setTimeout(() => {
+          showStationPopup(primeraEstacion);
+        }, 1200);
+      });
+    });
+  };
+
+  // --- INIT: Carga del Mapa ---
   map.on("load", () => {
     initSearch();
+    initLineNav(); // Inicializar botones laterales
 
+    // Controles de Zoom y Brújula
     document
       .getElementById("btn-zoom-in")
       ?.addEventListener("click", () => map.zoomIn());
@@ -241,7 +273,7 @@ export const initMap = () => {
       });
     });
 
-    // Clic en cualquier lado cierra el popup
+    // Cerrar popup al hacer clic en el mapa vacío
     map.on("click", (e) => {
       const features = map.queryRenderedFeatures(e.point, {
         layers: ["estaciones-layer"],
@@ -252,7 +284,7 @@ export const initMap = () => {
       }
     });
 
-    // Agregar fuente de Líneas (Trazado)
+    // Agregar Fuente y Capa de LÍNEAS (Trazado)
     map.addSource("subte-lineas", { type: "geojson", data: lineas as any });
     map.addLayer({
       id: "lineas-layer",
@@ -263,7 +295,7 @@ export const initMap = () => {
         "line-width": ["interpolate", ["linear"], ["zoom"], 11, 4, 16, 10],
         "line-color": [
           "match",
-          ["get", "LINEASUB"], // Asegúrate que tu JSON de líneas usa esta propiedad
+          ["get", "LINEASUB"],
           "LINEA A",
           LINE_COLORS["A"],
           "LINEA B",
@@ -276,17 +308,16 @@ export const initMap = () => {
           LINE_COLORS["E"],
           "LINEA H",
           LINE_COLORS["H"],
-          "#333", // Color por defecto si no coincide
+          "#333",
         ],
       },
     });
 
-    // Agregar fuente de Estaciones (Puntos)
+    // Agregar Fuente y Capa de ESTACIONES (Puntos)
     map.addSource("subte-estaciones", {
       type: "geojson",
       data: estaciones as any,
     });
-
     map.addLayer({
       id: "estaciones-layer",
       type: "circle",
@@ -299,7 +330,7 @@ export const initMap = () => {
       },
     });
 
-    // Cursores Interactivos
+    // Interacciones del Cursor (Mano al pasar por encima)
     map.on(
       "mouseenter",
       "estaciones-layer",
