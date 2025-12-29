@@ -376,3 +376,8 @@ html {
 .line-btn:active {
   transform: scale(0.95);
 }
+
+.control-btn.active {
+  color: #00add0;
+  background-color: #f0f0f0;
+}

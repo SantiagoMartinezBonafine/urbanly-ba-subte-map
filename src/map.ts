@@ -27,17 +27,17 @@ export const initMap = () => {
       },
       layers: [{ id: "osm-layer", type: "raster", source: "osm" }],
     },
-
     center: [-58.4173, -34.6118],
     zoom: 12,
-    pitch: 45,
-    bearing: -10,
+    pitch: 0, // Iniciamos en 2D por defecto
+    bearing: 0,
     maxZoom: 18,
     attributionControl: false,
   });
 
   let currentPopup: maplibregl.Popup | null = null;
 
+  // --- Funciones Auxiliares (Popups, Búsqueda, etc.) ---
   const showStationPopup = (feature: any) => {
     if (currentPopup) currentPopup.remove();
 
@@ -45,7 +45,6 @@ export const initMap = () => {
     const coords = feature.geometry.coordinates.slice();
     const lineaActual = props.LINEA;
     const currentID = Number(props.ID);
-
     const direccion = props.DIRECCION || "Ubicación aproximada";
     const infoExtra = props.INFO || "";
 
@@ -68,7 +67,6 @@ export const initMap = () => {
     const currentIndex = estacionesDeLinea.findIndex(
       (f: any) => Number(f.properties.ID) === currentID
     );
-
     const prevStation =
       currentIndex > 0 ? estacionesDeLinea[currentIndex - 1] : null;
     const nextStation =
@@ -96,45 +94,30 @@ export const initMap = () => {
     }
 
     popupDiv.innerHTML = `
-      <div class="popup-header">
-        <span class="popup-linea-badge" style="background-color: ${colorLinea}">LÍNEA ${lineaActual}</span>
-      </div>
+      <div class="popup-header"><span class="popup-linea-badge" style="background-color: ${colorLinea}">LÍNEA ${lineaActual}</span></div>
       <div class="popup-body">
         <h3 class="popup-title">${props.ESTACION}</h3>
         <div class="popup-info-section">
-          <div class="popup-address">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            ${direccion}
-          </div>
+          <div class="popup-address"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>${direccion}</div>
           ${infoExtra ? `<div class="popup-extra">${infoExtra}</div>` : ""}
           ${combinacionesHTML}
         </div>
         <div class="popup-nav">
           <button class="nav-btn" id="btn-prev" ${
             !prevStation ? "disabled" : ""
-          }>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            Anterior
-          </button>
+          }><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>Anterior</button>
           <button class="nav-btn" id="btn-next" ${
             !nextStation ? "disabled" : ""
-          }>
-            Siguiente
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
+          }>Siguiente<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
         </div>
-      </div>
-    `;
+      </div>`;
 
     const btnPrev = popupDiv.querySelector("#btn-prev");
     const btnNext = popupDiv.querySelector("#btn-next");
-
-    if (btnPrev && prevStation) {
+    if (btnPrev && prevStation)
       btnPrev.addEventListener("click", () => showStationPopup(prevStation));
-    }
-    if (btnNext && nextStation) {
+    if (btnNext && nextStation)
       btnNext.addEventListener("click", () => showStationPopup(nextStation));
-    }
 
     map.flyTo({
       center: coords,
@@ -161,24 +144,20 @@ export const initMap = () => {
     const input = document.getElementById("station-search") as HTMLInputElement;
     const resultsContainer = document.getElementById("search-results");
     const clearBtn = document.getElementById("clear-search");
-
     if (!input || !resultsContainer) return;
 
     input.addEventListener("input", (e) => {
       const query = (e.target as HTMLInputElement).value.toLowerCase();
       resultsContainer.innerHTML = "";
-
       if (query.length < 1) {
         resultsContainer.classList.remove("visible");
         clearBtn!.style.display = "none";
         return;
       }
       clearBtn!.style.display = "block";
-
       const matches = (estaciones as any).features.filter((f: any) =>
         f.properties.ESTACION.toLowerCase().includes(query)
       );
-
       if (matches.length > 0) {
         resultsContainer.classList.add("visible");
         matches.slice(0, 5).forEach((feature: any) => {
@@ -186,7 +165,6 @@ export const initMap = () => {
           item.className = "result-item";
           const color = LINE_COLORS[feature.properties.LINEA] || "#999";
           item.innerHTML = `<span class="result-name">${feature.properties.ESTACION}</span><span class="result-line" style="background-color: ${color}">${feature.properties.LINEA}</span>`;
-
           item.addEventListener("click", () => {
             showStationPopup(feature);
             input.value = "";
@@ -197,7 +175,6 @@ export const initMap = () => {
         });
       }
     });
-
     clearBtn?.addEventListener("click", () => {
       input.value = "";
       resultsContainer.classList.remove("visible");
@@ -206,31 +183,29 @@ export const initMap = () => {
   };
 
   const initLineNav = () => {
-    const buttons = document.querySelectorAll(".line-btn");
-    buttons.forEach((btn) => {
+    document.querySelectorAll(".line-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        const lineaSeleccionada = (e.target as HTMLElement).getAttribute(
-          "data-line"
+        const linea = (e.target as HTMLElement).getAttribute("data-line");
+        const filtradas = (estaciones as any).features.filter(
+          (f: any) => f.properties.LINEA === linea
         );
-        const estacionesLinea = (estaciones as any).features.filter(
-          (f: any) => f.properties.LINEA === lineaSeleccionada
-        );
-
-        if (estacionesLinea.length === 0) return;
-
-        estacionesLinea.sort(
-          (a: any, b: any) => Number(a.properties.ID) - Number(b.properties.ID)
-        );
-
-        showStationPopup(estacionesLinea[0]);
+        if (filtradas.length > 0) {
+          filtradas.sort(
+            (a: any, b: any) =>
+              Number(a.properties.ID) - Number(b.properties.ID)
+          );
+          showStationPopup(filtradas[0]);
+        }
       });
     });
   };
 
+  // --- Eventos del Mapa ---
   map.on("load", () => {
     initSearch();
     initLineNav();
 
+    // Controles de Zoom
     document
       .getElementById("btn-zoom-in")
       ?.addEventListener("click", () => map.zoomIn());
@@ -238,6 +213,7 @@ export const initMap = () => {
       .getElementById("btn-zoom-out")
       ?.addEventListener("click", () => map.zoomOut());
 
+    // Brújula / Reset
     document.getElementById("btn-compass")?.addEventListener("click", () => {
       if (currentPopup) {
         currentPopup.remove();
@@ -252,16 +228,29 @@ export const initMap = () => {
       });
     });
 
-    map.on("click", (e) => {
-      const features = map.queryRenderedFeatures(e.point, {
-        layers: ["estaciones-layer"],
-      });
-      if (!features.length && currentPopup) {
-        currentPopup.remove();
-        currentPopup = null;
+    document.getElementById("btn-3d")?.addEventListener("click", () => {
+      const currentPitch = map.getPitch();
+
+      if (currentPitch < 30) {
+        map.flyTo({
+          pitch: 60,
+          bearing: -10,
+          duration: 1500,
+          essential: true,
+        });
+        document.getElementById("btn-3d")?.classList.add("active");
+      } else {
+        map.flyTo({
+          pitch: 0,
+          bearing: 0,
+          duration: 1500,
+          essential: true,
+        });
+        document.getElementById("btn-3d")?.classList.remove("active");
       }
     });
 
+    // Capas de Datos
     map.addSource("subte-lineas", { type: "geojson", data: lineas as any });
     map.addLayer({
       id: "lineas-layer",
@@ -316,10 +305,17 @@ export const initMap = () => {
       "estaciones-layer",
       () => (map.getCanvas().style.cursor = "")
     );
-
     map.on("click", "estaciones-layer", (e: any) => {
-      if (e.features && e.features.length > 0) {
-        showStationPopup(e.features[0]);
+      if (e.features && e.features.length > 0) showStationPopup(e.features[0]);
+    });
+
+    map.on("click", (e) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ["estaciones-layer"],
+      });
+      if (!features.length && currentPopup) {
+        currentPopup.remove();
+        currentPopup = null;
       }
     });
   });
