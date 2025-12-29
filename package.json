@@ -1,0 +1,27 @@
+{
+  "name": "urbanly-ba-subte-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoMartinezBonafine/urbanly-ba-subte-map.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantiagoMartinezBonafine/urbanly-ba-subte-map/issues"
+  },
+  "homepage": "https://github.com/SantiagoMartinezBonafine/urbanly-ba-subte-map#readme",
+  "dependencies": {
+    "maplibre-gl": "^5.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
