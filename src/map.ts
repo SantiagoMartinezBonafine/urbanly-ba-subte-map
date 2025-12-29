@@ -27,8 +27,11 @@ export const initMap = () => {
       },
       layers: [{ id: "osm-layer", type: "raster", source: "osm" }],
     },
+
     center: [-58.4173, -34.6118],
     zoom: 12,
+    pitch: 45,
+    bearing: -10,
     maxZoom: 18,
     attributionControl: false,
   });
@@ -54,9 +57,7 @@ export const initMap = () => {
         combinaciones = [];
       }
     }
-    if (!Array.isArray(combinaciones)) {
-      combinaciones = [];
-    }
+    if (!Array.isArray(combinaciones)) combinaciones = [];
 
     const estacionesDeLinea = (estaciones as any).features
       .filter((f: any) => f.properties.LINEA === lineaActual)
@@ -100,7 +101,6 @@ export const initMap = () => {
       </div>
       <div class="popup-body">
         <h3 class="popup-title">${props.ESTACION}</h3>
-        
         <div class="popup-info-section">
           <div class="popup-address">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -109,7 +109,6 @@ export const initMap = () => {
           ${infoExtra ? `<div class="popup-extra">${infoExtra}</div>` : ""}
           ${combinacionesHTML}
         </div>
-
         <div class="popup-nav">
           <button class="nav-btn" id="btn-prev" ${
             !prevStation ? "disabled" : ""
@@ -137,12 +136,21 @@ export const initMap = () => {
       btnNext.addEventListener("click", () => showStationPopup(nextStation));
     }
 
-    map.flyTo({ center: coords, zoom: 15.5, speed: 1.5, curve: 1.2 });
+    map.flyTo({
+      center: coords,
+      zoom: 16.5,
+      pitch: 50,
+      bearing: -15,
+      speed: 0.8,
+      curve: 1.5,
+      essential: true,
+    });
 
     currentPopup = new maplibregl.Popup({
       closeButton: false,
-      offset: 15,
+      offset: 25,
       maxWidth: "320px",
+      anchor: "bottom",
     })
       .setLngLat(coords)
       .setDOMContent(popupDiv)
@@ -199,13 +207,11 @@ export const initMap = () => {
 
   const initLineNav = () => {
     const buttons = document.querySelectorAll(".line-btn");
-
     buttons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const lineaSeleccionada = (e.target as HTMLElement).getAttribute(
           "data-line"
         );
-
         const estacionesLinea = (estaciones as any).features.filter(
           (f: any) => f.properties.LINEA === lineaSeleccionada
         );
@@ -216,20 +222,7 @@ export const initMap = () => {
           (a: any, b: any) => Number(a.properties.ID) - Number(b.properties.ID)
         );
 
-        const primeraEstacion = estacionesLinea[0];
-        const coords = primeraEstacion.geometry.coordinates;
-
-        map.flyTo({
-          center: coords,
-          zoom: 16,
-          speed: 1.2,
-          curve: 1.42,
-          pitch: 45,
-        });
-
-        setTimeout(() => {
-          showStationPopup(primeraEstacion);
-        }, 1200);
+        showStationPopup(estacionesLinea[0]);
       });
     });
   };
@@ -255,6 +248,7 @@ export const initMap = () => {
         zoom: 12,
         bearing: 0,
         pitch: 0,
+        speed: 1.5,
       });
     });
 
@@ -296,7 +290,6 @@ export const initMap = () => {
       },
     });
 
-    // Agregar Fuente y Capa de ESTACIONES (Puntos)
     map.addSource("subte-estaciones", {
       type: "geojson",
       data: estaciones as any,
