@@ -4,1292 +4,1015 @@
     {
       "type": "Feature",
       "properties": {
-        "ID": 1.0,
-        "ESTACION": "CASEROS",
-        "LINEA": "H",
-        "DIRECCION": "Av. Jujuy y Av. Caseros",
-        "COMBINACIONES": [],
-        "INFO": "Acceso a Hospital de Gastroenterología"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.39892758536007, -34.635750180343017]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 2.0,
-        "ESTACION": "INCLAN",
-        "LINEA": "H",
-        "DIRECCION": "Av. Jujuy e Inclán",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.400969556016499, -34.629375657572815]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 3.0,
-        "ESTACION": "HUMBERTO 1°",
-        "LINEA": "H",
-        "DIRECCION": "Av. Jujuy y Humberto 1°",
-        "COMBINACIONES": ["E"],
-        "INFO": "Estación de combinación"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.402322730424025, -34.623092320501897]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 4.0,
-        "ESTACION": "VENEZUELA",
-        "LINEA": "H",
-        "DIRECCION": "Av. Jujuy y Venezuela",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.404731716489998, -34.615242152270554]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 5.0,
-        "ESTACION": "ONCE - 30 DE DICIEMBRE",
-        "LINEA": "H",
-        "DIRECCION": "Av. Pueyrredón y Av. Rivadavia",
-        "COMBINACIONES": ["A"],
-        "INFO": "Terminal Ferroviaria Sarmiento / Plaza Miserere"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.406036381035165, -34.608935241621531]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 6.0,
-        "ESTACION": "9 DE JULIO",
-        "LINEA": "D",
-        "DIRECCION": "Carlos Pellegrini y Sarmiento",
-        "COMBINACIONES": ["B", "C"],
-        "INFO": "Obelisco / Microcentro"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.380574342889609, -34.604245202962922]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 7.0,
-        "ESTACION": "FACULTAD DE MEDICINA",
-        "LINEA": "D",
-        "DIRECCION": "Av. Córdoba y Junín",
-        "COMBINACIONES": [],
-        "INFO": "Plaza Houssay / Facultades UBA"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.397923755573373, -34.599757080763894]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 8.0,
-        "ESTACION": "TRIBUNALES",
-        "LINEA": "D",
-        "DIRECCION": "Talcahuano y Tucumán",
-        "COMBINACIONES": [],
-        "INFO": "Teatro Colón / Plaza Lavalle / Palacio de Justicia"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.385142358801268, -34.601587165139364]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 9.0,
-        "ESTACION": "AGÜERO",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Agüero",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.40716132018985, -34.591627843719891]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 10.0,
-        "ESTACION": "R.SCALABRINI ORTIZ",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Av. Scalabrini Ortiz",
-        "COMBINACIONES": [],
-        "INFO": "Jardín Botánico (Acceso Norte)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.415955419006657, -34.585155944049326]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 11.0,
-        "ESTACION": "PLAZA ITALIA",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Av. Sarmiento",
-        "COMBINACIONES": [],
-        "INFO": "La Rural / Ecoparque / Jardín Botánico"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.42119601012643, -34.581411193604502]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 12.0,
-        "ESTACION": "PALERMO",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Av. Juan B. Justo",
-        "COMBINACIONES": [],
-        "INFO": "Puente Pacífico / Transbordo Tren San Martín"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.425711441112327, -34.578422022790335]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 13.0,
-        "ESTACION": "RETIRO",
-        "LINEA": "C",
-        "DIRECCION": "Av. Dr. José María Ramos Mejía 1430",
-        "COMBINACIONES": ["E"],
-        "INFO": "Terminal de Ómnibus / Trenes Mitre, Belgrano y San Martín"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.374018216481609, -34.591193808333209]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 14.0,
-        "ESTACION": "LAVALLE",
-        "LINEA": "C",
-        "DIRECCION": "Esmeralda y Lavalle",
-        "COMBINACIONES": [],
-        "INFO": "Peatonal Lavalle / Microcentro"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.378155782824365, -34.601769923011354]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 15.0,
-        "ESTACION": "DIAGONAL NORTE",
-        "LINEA": "C",
-        "DIRECCION": "Sarmiento y Av. Roque Sáenz Peña",
-        "COMBINACIONES": ["B", "D"],
-        "INFO": "Obelisco"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.379529980073869, -34.604843739914052]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 16.0,
-        "ESTACION": "AV. DE MAYO",
-        "LINEA": "C",
-        "DIRECCION": "Av. de Mayo y Bernardo de Irigoyen",
-        "COMBINACIONES": ["A"],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.380610717957893, -34.608983314882686]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 17.0,
-        "ESTACION": "MORENO",
-        "LINEA": "C",
-        "DIRECCION": "Bernardo de Irigoyen y Moreno",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.380444469660048, -34.61261727980375]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 18.0,
-        "ESTACION": "INDEPENDENCIA",
-        "LINEA": "C",
-        "DIRECCION": "Bernardo de Irigoyen y Av. Independencia",
-        "COMBINACIONES": ["E"],
-        "INFO": "Estación de combinación"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.380173610475239, -34.618125599293286]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 19.0,
-        "ESTACION": "CONSTITUCION",
-        "LINEA": "C",
-        "DIRECCION": "Av. Brasil y Lima",
-        "COMBINACIONES": [],
-        "INFO": "Terminal Ferroviaria Roca"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.381434433934324, -34.627619452254756]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 20.0,
-        "ESTACION": "FLORIDA",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Florida",
-        "COMBINACIONES": [],
-        "INFO": "Peatonal Florida / Microcentro"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.375071518263553, -34.603297285577497]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 21.0,
-        "ESTACION": "C. PELLEGRINI",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Carlos Pellegrini",
-        "COMBINACIONES": ["C", "D"],
-        "INFO": "Obelisco / Teatros"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.380714847140887, -34.603637105181726]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 22.0,
-        "ESTACION": "URUGUAY",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Uruguay",
-        "COMBINACIONES": [],
-        "INFO": "Tribunales / Zona de Teatros"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.387296133540794, -34.60409355310567]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 23.0,
-        "ESTACION": "CALLAO",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Callao",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.392314235088747, -34.604419542860789]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 24.0,
-        "ESTACION": "PASTEUR - AMIA",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Pasteur",
-        "COMBINACIONES": [],
-        "INFO": "Memorial AMIA"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.399474256679021, -34.604642967919318]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 25.0,
-        "ESTACION": "PUEYRREDON",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Pueyrredón",
-        "COMBINACIONES": ["H"],
-        "INFO": "Zona Comercial Once"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.405399439843379, -34.60458105535119]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 26.0,
-        "ESTACION": "CARLOS GARDEL",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Agüero",
-        "COMBINACIONES": [],
-        "INFO": "Abasto Shopping"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.411762599632134, -34.604079517347451]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 27.0,
-        "ESTACION": "MEDRANO",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Medrano",
-        "COMBINACIONES": [],
-        "INFO": "Hospital Italiano (cercanía)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.420962470270588, -34.603164901097252]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 28.0,
-        "ESTACION": "ANGEL GALLARDO",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Ángel Gallardo",
-        "COMBINACIONES": [],
-        "INFO": "Parque Centenario / Museo de Ciencias Naturales"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.43127386032458, -34.60216222934271]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 29.0,
-        "ESTACION": "MALABIA - OSVALDO PUGLIESE",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Malabia",
-        "COMBINACIONES": [],
-        "INFO": "Villa Crespo / Outlets"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.43977149841551, -34.598967364158774]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 30.0,
-        "ESTACION": "DORREGO",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Dorrego",
-        "COMBINACIONES": [],
-        "INFO": "Chacarita / Tren San Martín / Parque Los Andes"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.447573092531215, -34.591718153619759]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 31.0,
-        "ESTACION": "PERU",
-        "LINEA": "A",
-        "DIRECCION": "Av. de Mayo y Perú",
-        "COMBINACIONES": ["D", "E"],
-        "INFO": "Legislatura Porteña / Plaza de Mayo"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.374267726430439, -34.608559073853222]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 32.0,
-        "ESTACION": "PIEDRAS",
-        "LINEA": "A",
-        "DIRECCION": "Av. de Mayo y Piedras",
-        "COMBINACIONES": [],
-        "INFO": "Café Tortoni (cercanía)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.379085153090848, -34.608881721214985]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 33.0,
-        "ESTACION": "LIMA",
-        "LINEA": "A",
-        "DIRECCION": "Av. de Mayo y Lima",
-        "COMBINACIONES": ["C"],
-        "INFO": "Av. 9 de Julio"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.382232401018143, -34.609099806551932]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 34.0,
-        "ESTACION": "SAENZ PEÑA",
-        "LINEA": "A",
-        "DIRECCION": "Av. de Mayo y Luis Sáenz Peña",
-        "COMBINACIONES": [],
-        "INFO": "Palacio Barolo"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.386777194087301, -34.609412586502643]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 35.0,
-        "ESTACION": "CONGRESO",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Av. Callao",
-        "COMBINACIONES": [],
-        "INFO": "Congreso de la Nación"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.392668824664838, -34.609225684317394]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 36.0,
-        "ESTACION": "PASCO",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Pasco",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.398426991812315, -34.609645961705247]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 37.0,
-        "ESTACION": "ALBERTI",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Alberti",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.401207534233002, -34.609833578439833]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 38.0,
-        "ESTACION": "PLAZA DE MISERERE",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Av. Pueyrredón",
-        "COMBINACIONES": ["H"],
-        "INFO": "Tren Sarmiento / Plaza Miserere"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.406707116508805, -34.609817245670563]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 39.0,
-        "ESTACION": "LORIA",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Sánchez de Loria",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.415185708837562, -34.610781690450352]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 40.0,
-        "ESTACION": "CASTRO BARROS",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Castro Barros",
-        "COMBINACIONES": [],
-        "INFO": "Confitería Las Violetas"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.421815671370581, -34.611770229125511]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 41.0,
-        "ESTACION": "RIO DE JANEIRO",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Río de Janeiro",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.429500323299706, -34.615205610331181]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 42.0,
-        "ESTACION": "ACOYTE",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Av. Acoyte",
-        "COMBINACIONES": [],
-        "INFO": "Parque Rivadavia / Zona Comercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.436428528849341, -34.618279967144538]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 43.0,
-        "ESTACION": "PRIMERA JUNTA",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Rojas",
-        "COMBINACIONES": [],
-        "INFO": "Mercado del Progreso / Transbordo Tren Sarmiento"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.441177625110889, -34.620405212858898]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 44.0,
-        "ESTACION": "BOLIVAR",
-        "LINEA": "E",
-        "DIRECCION": "Plaza de Mayo",
-        "COMBINACIONES": ["A", "D"],
-        "INFO": "Cabildo / Catedral"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.373684224168464, -34.609242428860767]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 45.0,
-        "ESTACION": "BELGRANO",
-        "LINEA": "E",
-        "DIRECCION": "Av. Belgrano y Av. Pte. Julio A. Roca",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.377580886540613, -34.61284910581864]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 46.0,
-        "ESTACION": "INDEPENDENCIA",
-        "LINEA": "E",
-        "DIRECCION": "Bernardo de Irigoyen y Av. Independencia",
-        "COMBINACIONES": ["C"],
-        "INFO": "Estación de combinación"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.381534941712232, -34.617937393977144]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 47.0,
-        "ESTACION": "SAN JOSE",
-        "LINEA": "E",
-        "DIRECCION": "San José y Av. San Juan",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.38514854962375, -34.622339491936735]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 48.0,
-        "ESTACION": "ENTRE RIOS - RODOLFO WALSH",
-        "LINEA": "E",
-        "DIRECCION": "Av. Entre Ríos y Av. San Juan",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.391511699971502, -34.622719666127765]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 49.0,
-        "ESTACION": "PICHINCHA",
-        "LINEA": "E",
-        "DIRECCION": "Pichincha y Av. San Juan",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.397068074662556, -34.623109865779078]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 50.0,
-        "ESTACION": "JUJUY",
-        "LINEA": "E",
-        "DIRECCION": "Av. Jujuy y Av. San Juan",
-        "COMBINACIONES": ["H"],
-        "INFO": "Estación de combinación"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.402936580256053, -34.623865711583449]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 51.0,
-        "ESTACION": "URQUIZA",
-        "LINEA": "E",
-        "DIRECCION": "Gral. Urquiza y Av. San Juan",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.409390783443627, -34.624653786466155]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 52.0,
-        "ESTACION": "JOSE MARIA MORENO",
-        "LINEA": "E",
-        "DIRECCION": "Av. Directorio y Av. José María Moreno",
-        "COMBINACIONES": [],
-        "INFO": "Acceso a Autopista"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.433816250239452, -34.62801754877421]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 53.0,
-        "ESTACION": "EMILIO MITRE",
-        "LINEA": "E",
-        "DIRECCION": "Av. Eva Perón y Emilio Mitre",
-        "COMBINACIONES": [],
-        "INFO": "Parque Chacabuco"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.442170705965225, -34.631041842165459]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 54.0,
-        "ESTACION": "BULNES",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Bulnes",
-        "COMBINACIONES": [],
-        "INFO": "Alto Palermo Shopping"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.411293901393577, -34.588237108418184]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 55.0,
-        "ESTACION": "PUEYRREDON",
-        "LINEA": "D",
-        "DIRECCION": "Av. Santa Fe y Av. Pueyrredón",
-        "COMBINACIONES": ["H"],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.402395342535065, -34.594425718628472]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 56.0,
-        "ESTACION": "CALLAO",
-        "LINEA": "D",
-        "DIRECCION": "Av. Córdoba y Av. Callao",
-        "COMBINACIONES": [],
-        "INFO": "Teatro Cervantes (cercanía)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.393125180972717, -34.599639552418992]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 57.0,
-        "ESTACION": "SAN MARTIN",
-        "LINEA": "C",
-        "DIRECCION": "Av. Santa Fe y Esmeralda",
-        "COMBINACIONES": [],
-        "INFO": "Plaza San Martín"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.377819050986716, -34.595057404779141]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 58.0,
-        "ESTACION": "SAN JUAN",
-        "LINEA": "C",
-        "DIRECCION": "Bernardo de Irigoyen y Av. San Juan",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.379921178865118, -34.621916732208149]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 59.0,
-        "ESTACION": "MEDALLA MILAGROSA",
-        "LINEA": "E",
-        "DIRECCION": "Av. Eva Perón y Curapaligüe",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.450278256370879, -34.636389189385831]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 60.0,
-        "ESTACION": "AV. LA PLATA",
-        "LINEA": "E",
-        "DIRECCION": "Av. Eva Perón y Av. La Plata",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.426789022897211, -34.627015467001975]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 61.0,
-        "ESTACION": "BOEDO",
-        "LINEA": "E",
-        "DIRECCION": "Av. San Juan y Av. Boedo",
-        "COMBINACIONES": [],
-        "INFO": "Esquina Homero Manzi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.415532818967826, -34.625366105892546]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 62.0,
-        "ESTACION": "MINISTRO CARRANZA",
-        "LINEA": "D",
-        "DIRECCION": "Av. Cabildo y Av. Dorrego",
-        "COMBINACIONES": [],
-        "INFO": "Transbordo Tren Mitre"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.435013533733859, -34.575178364111274]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 63.0,
-        "ESTACION": "OLLEROS",
-        "LINEA": "D",
-        "DIRECCION": "Av. Cabildo y Olleros",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.444668148334863, -34.570012307825692]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 64.0,
-        "ESTACION": "JOSE HERNANDEZ",
-        "LINEA": "D",
-        "DIRECCION": "Av. Cabildo y Virrey del Pino",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.452125603388936, -34.566215242158876]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 65.0,
-        "ESTACION": "JURAMENTO",
-        "LINEA": "D",
-        "DIRECCION": "Av. Cabildo y Av. Juramento",
-        "COMBINACIONES": [],
-        "INFO": "Centro Comercial Belgrano"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.456489134589027, -34.562309086997438]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 66.0,
-        "ESTACION": "FEDERICO LACROZE",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Federico Lacroze",
-        "COMBINACIONES": [],
-        "INFO": "Cementerio de la Chacarita / Tren Urquiza"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.455029286280954, -34.587197852990357]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 67.0,
-        "ESTACION": "PLAZA DE LOS VIRREYES - EVA PERON",
-        "LINEA": "E",
-        "DIRECCION": "Av. Eva Perón y Av. Lafuente",
-        "COMBINACIONES": [],
-        "INFO": "Combinación con Premetro"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.461651761689808, -34.643312162409806]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 68.0,
-        "ESTACION": "VARELA",
-        "LINEA": "E",
-        "DIRECCION": "Av. Eva Perón y Varela",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.457891755773133, -34.640137352298012]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 69.0,
-        "ESTACION": "CATEDRAL",
-        "LINEA": "D",
-        "DIRECCION": "Diagonal Norte y San Martín",
-        "COMBINACIONES": ["A", "E"],
-        "INFO": "Plaza de Mayo / Catedral"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.373955806951109, -34.607802336428968]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 70.0,
+        "ID": 101,
         "ESTACION": "PLAZA DE MAYO",
         "LINEA": "A",
         "DIRECCION": "Hipólito Yrigoyen y Balcarce",
         "COMBINACIONES": [],
         "INFO": "Casa Rosada"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.370968498967358, -34.608810309168874]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.370968, -34.60881] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 71.0,
-        "ESTACION": "CONGRESO DE TUCUMAN",
-        "LINEA": "D",
-        "DIRECCION": "Av. Cabildo y Av. Congreso",
-        "COMBINACIONES": [],
-        "INFO": "Terminal Norte Línea D"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.462378408224311, -34.555641766426078]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 72.0,
-        "ESTACION": "LEANDRO N. ALEM",
-        "LINEA": "B",
-        "DIRECCION": "Av. Corrientes y Av. Leandro N. Alem",
-        "COMBINACIONES": ["E"],
-        "INFO": "Luna Park / CCK"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.369929850122439, -34.602989496633228]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 73.0,
-        "ESTACION": "TRONADOR - VILLA ORTÚZAR",
-        "LINEA": "B",
-        "DIRECCION": "Av. Triunvirato y Tronador",
-        "COMBINACIONES": [],
-        "INFO": "UTN (cercanía)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.466227204692146, -34.584094620116083]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 74.0,
-        "ESTACION": "DE LOS INCAS -PQUE. CHAS",
-        "LINEA": "B",
-        "DIRECCION": "Av. Triunvirato y Av. De los Incas",
-        "COMBINACIONES": [],
-        "INFO": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.47424082617713, -34.581248845957873]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 75.0,
-        "ESTACION": "CARABOBO",
+        "ID": 102,
+        "ESTACION": "PERU",
         "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Av. Carabobo",
-        "COMBINACIONES": [],
-        "INFO": ""
+        "DIRECCION": "Av. de Mayo y Perú",
+        "COMBINACIONES": ["D", "E"],
+        "INFO": "Legislatura Porteña / Plaza de Mayo"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.456709797523757, -34.626666593180289]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.374267, -34.608559] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 76.0,
+        "ID": 103,
+        "ESTACION": "PIEDRAS",
+        "LINEA": "A",
+        "DIRECCION": "Av. de Mayo y Piedras",
+        "COMBINACIONES": [],
+        "INFO": "Café Tortoni (cercanía)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.379085, -34.608881] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 104,
+        "ESTACION": "LIMA",
+        "LINEA": "A",
+        "DIRECCION": "Av. de Mayo y Lima",
+        "COMBINACIONES": ["C"],
+        "INFO": "Av. 9 de Julio"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.382232, -34.609099] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 105,
+        "ESTACION": "SAENZ PEÑA",
+        "LINEA": "A",
+        "DIRECCION": "Av. de Mayo y Luis Sáenz Peña",
+        "COMBINACIONES": [],
+        "INFO": "Palacio Barolo"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.386777, -34.609412] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 106,
+        "ESTACION": "CONGRESO",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Av. Callao",
+        "COMBINACIONES": [],
+        "INFO": "Congreso de la Nación"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.392668, -34.609225] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 107,
+        "ESTACION": "PASCO",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Pasco",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.398426, -34.609645] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 108,
+        "ESTACION": "ALBERTI",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Alberti",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.401207, -34.609833] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 109,
+        "ESTACION": "PLAZA DE MISERERE",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Av. Pueyrredón",
+        "COMBINACIONES": ["H"],
+        "INFO": "Tren Sarmiento / Plaza Miserere"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.406707, -34.609817] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 110,
+        "ESTACION": "LORIA",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Sánchez de Loria",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.415185, -34.610781] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 111,
+        "ESTACION": "CASTRO BARROS",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Castro Barros",
+        "COMBINACIONES": [],
+        "INFO": "Confitería Las Violetas"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.421815, -34.61177] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 112,
+        "ESTACION": "RIO DE JANEIRO",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Río de Janeiro",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.4295, -34.615205] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 113,
+        "ESTACION": "ACOYTE",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Av. Acoyte",
+        "COMBINACIONES": [],
+        "INFO": "Parque Rivadavia / Zona Comercial"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.436428, -34.618279] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 114,
+        "ESTACION": "PRIMERA JUNTA",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Rojas",
+        "COMBINACIONES": [],
+        "INFO": "Mercado del Progreso / Transbordo Tren Sarmiento"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.441177, -34.620405] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 115,
         "ESTACION": "PUAN",
         "LINEA": "A",
         "DIRECCION": "Av. Rivadavia y Puan",
         "COMBINACIONES": [],
         "INFO": "Facultad de Filosofía y Letras UBA"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.44864765402636, -34.623528952889352]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.448647, -34.623528] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 77.0,
-        "ESTACION": "CORRIENTES",
-        "LINEA": "H",
-        "DIRECCION": "Av. Pueyrredón y Av. Corrientes",
-        "COMBINACIONES": ["B"],
-        "INFO": "Zona Comercial"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.405450328484243, -34.604490201608137]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 78.0,
-        "ESTACION": "PARQUE PATRICIOS",
-        "LINEA": "H",
-        "DIRECCION": "Av. Caseros y Monteagudo",
-        "COMBINACIONES": [],
-        "INFO": "Polo Tecnológico / Parque Patricios"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.405794825968549, -34.638405988285101]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 79.0,
-        "ESTACION": "HOSPITALES",
-        "LINEA": "H",
-        "DIRECCION": "Av. Almafuerte y Uspallata",
-        "COMBINACIONES": [],
-        "INFO": "Hospitales Penna y Churruca"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.412385151200489, -34.64126894339087]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 80.0,
-        "ESTACION": "ECHEVERRÍA",
-        "LINEA": "B",
-        "DIRECCION": "Av. Triunvirato y Echeverría",
+        "ID": 116,
+        "ESTACION": "CARABOBO",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Av. Carabobo",
         "COMBINACIONES": [],
         "INFO": ""
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.481013503672038, -34.577797377542275]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.456709, -34.626666] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 81.0,
-        "ESTACION": "JUAN MANUEL DE ROSAS",
-        "LINEA": "B",
-        "DIRECCION": "Av. Triunvirato y Av. Monroe",
-        "COMBINACIONES": [],
-        "INFO": "Transbordo Tren Mitre (Villa Urquiza)"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.486385347889112, -34.574318914274812]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 83.0,
-        "ESTACION": "SAN PEDRITO",
-        "LINEA": "A",
-        "DIRECCION": "Av. Rivadavia y Av. San Pedrito",
-        "COMBINACIONES": [],
-        "INFO": "Terminal Oeste Línea A"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.46963962922468, -34.630707087006002]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "ID": 82.0,
+        "ID": 117,
         "ESTACION": "SAN JOSÉ DE FLORES",
         "LINEA": "A",
         "DIRECCION": "Av. Rivadavia y Gral. Artigas",
         "COMBINACIONES": [],
         "INFO": "Transbordo Tren Sarmiento (Flores)"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.463540510628633, -34.629087226797019]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.46354, -34.629087] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 84.0,
-        "ESTACION": "CÓRDOBA",
-        "LINEA": "H",
-        "DIRECCION": "Av. Pueyrredón y Av. Córdoba",
+        "ID": 118,
+        "ESTACION": "SAN PEDRITO",
+        "LINEA": "A",
+        "DIRECCION": "Av. Rivadavia y Av. San Pedrito",
+        "COMBINACIONES": [],
+        "INFO": "Terminal Oeste Línea A"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.469639, -34.630707] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 201,
+        "ESTACION": "LEANDRO N. ALEM",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Leandro N. Alem",
+        "COMBINACIONES": ["E"],
+        "INFO": "Luna Park / CCK"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.369929, -34.602989] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 202,
+        "ESTACION": "FLORIDA",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Florida",
+        "COMBINACIONES": [],
+        "INFO": "Peatonal Florida / Microcentro"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.375071, -34.603297] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 203,
+        "ESTACION": "C. PELLEGRINI",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Carlos Pellegrini",
+        "COMBINACIONES": ["C", "D"],
+        "INFO": "Obelisco / Teatros"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.380714, -34.603637] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 204,
+        "ESTACION": "URUGUAY",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Uruguay",
+        "COMBINACIONES": [],
+        "INFO": "Tribunales / Zona de Teatros"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.387296, -34.604093] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 205,
+        "ESTACION": "CALLAO",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Callao",
         "COMBINACIONES": [],
         "INFO": ""
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.403721496438735, -34.598455111773404]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.392314, -34.604419] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 85.0,
+        "ID": 206,
+        "ESTACION": "PASTEUR - AMIA",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Pasteur",
+        "COMBINACIONES": [],
+        "INFO": "Memorial AMIA"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.399474, -34.604642] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 207,
+        "ESTACION": "PUEYRREDON",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Pueyrredón",
+        "COMBINACIONES": ["H"],
+        "INFO": "Zona Comercial Once"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.405399, -34.604581] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 208,
+        "ESTACION": "CARLOS GARDEL",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Agüero",
+        "COMBINACIONES": [],
+        "INFO": "Abasto Shopping"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.411762, -34.604079] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 209,
+        "ESTACION": "MEDRANO",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Medrano",
+        "COMBINACIONES": [],
+        "INFO": "Hospital Italiano (cercanía)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.420962, -34.603164] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 210,
+        "ESTACION": "ANGEL GALLARDO",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Ángel Gallardo",
+        "COMBINACIONES": [],
+        "INFO": "Parque Centenario / Museo de Ciencias Naturales"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.431273, -34.602162] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 211,
+        "ESTACION": "MALABIA - OSVALDO PUGLIESE",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Malabia",
+        "COMBINACIONES": [],
+        "INFO": "Villa Crespo / Outlets"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.439771, -34.598967] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 212,
+        "ESTACION": "DORREGO",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Dorrego",
+        "COMBINACIONES": [],
+        "INFO": "Chacarita / Tren San Martín / Parque Los Andes"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.447573, -34.591718] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 213,
+        "ESTACION": "FEDERICO LACROZE",
+        "LINEA": "B",
+        "DIRECCION": "Av. Corrientes y Av. Federico Lacroze",
+        "COMBINACIONES": [],
+        "INFO": "Cementerio de la Chacarita / Tren Urquiza"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.455029, -34.587197] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 214,
+        "ESTACION": "TRONADOR - VILLA ORTÚZAR",
+        "LINEA": "B",
+        "DIRECCION": "Av. Triunvirato y Tronador",
+        "COMBINACIONES": [],
+        "INFO": "UTN (cercanía)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.466227, -34.584094] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 215,
+        "ESTACION": "DE LOS INCAS -PQUE. CHAS",
+        "LINEA": "B",
+        "DIRECCION": "Av. Triunvirato y Av. De los Incas",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.47424, -34.581248] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 216,
+        "ESTACION": "ECHEVERRÍA",
+        "LINEA": "B",
+        "DIRECCION": "Av. Triunvirato y Echeverría",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.481013, -34.577797] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 217,
+        "ESTACION": "JUAN MANUEL DE ROSAS",
+        "LINEA": "B",
+        "DIRECCION": "Av. Triunvirato y Av. Monroe",
+        "COMBINACIONES": [],
+        "INFO": "Transbordo Tren Mitre (Villa Urquiza)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.486385, -34.574318] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 301,
+        "ESTACION": "RETIRO",
+        "LINEA": "C",
+        "DIRECCION": "Av. Dr. José María Ramos Mejía 1430",
+        "COMBINACIONES": ["E"],
+        "INFO": "Terminal de Ómnibus / Trenes Mitre, Belgrano y San Martín"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.374018, -34.591193] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 302,
+        "ESTACION": "SAN MARTIN",
+        "LINEA": "C",
+        "DIRECCION": "Av. Santa Fe y Esmeralda",
+        "COMBINACIONES": [],
+        "INFO": "Plaza San Martín"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.377819, -34.595057] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 303,
+        "ESTACION": "LAVALLE",
+        "LINEA": "C",
+        "DIRECCION": "Esmeralda y Lavalle",
+        "COMBINACIONES": [],
+        "INFO": "Peatonal Lavalle / Microcentro"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.378155, -34.601769] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 304,
+        "ESTACION": "DIAGONAL NORTE",
+        "LINEA": "C",
+        "DIRECCION": "Sarmiento y Av. Roque Sáenz Peña",
+        "COMBINACIONES": ["B", "D"],
+        "INFO": "Obelisco"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.379529, -34.604843] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 305,
+        "ESTACION": "AV. DE MAYO",
+        "LINEA": "C",
+        "DIRECCION": "Av. de Mayo y Bernardo de Irigoyen",
+        "COMBINACIONES": ["A"],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.38061, -34.608983] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 306,
+        "ESTACION": "MORENO",
+        "LINEA": "C",
+        "DIRECCION": "Bernardo de Irigoyen y Moreno",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.380444, -34.612617] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 307,
+        "ESTACION": "INDEPENDENCIA",
+        "LINEA": "C",
+        "DIRECCION": "Bernardo de Irigoyen y Av. Independencia",
+        "COMBINACIONES": ["E"],
+        "INFO": "Estación de combinación"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.380173, -34.618125] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 308,
+        "ESTACION": "SAN JUAN",
+        "LINEA": "C",
+        "DIRECCION": "Bernardo de Irigoyen y Av. San Juan",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.379921, -34.621916] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 309,
+        "ESTACION": "CONSTITUCION",
+        "LINEA": "C",
+        "DIRECCION": "Av. Brasil y Lima",
+        "COMBINACIONES": [],
+        "INFO": "Terminal Ferroviaria Roca"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.381434, -34.627619] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 401,
+        "ESTACION": "CATEDRAL",
+        "LINEA": "D",
+        "DIRECCION": "Diagonal Norte y San Martín",
+        "COMBINACIONES": ["A", "E"],
+        "INFO": "Plaza de Mayo / Catedral"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.373955, -34.607802] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 402,
+        "ESTACION": "9 DE JULIO",
+        "LINEA": "D",
+        "DIRECCION": "Carlos Pellegrini y Sarmiento",
+        "COMBINACIONES": ["B", "C"],
+        "INFO": "Obelisco / Microcentro"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.380574, -34.604245] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 403,
+        "ESTACION": "TRIBUNALES",
+        "LINEA": "D",
+        "DIRECCION": "Talcahuano y Tucumán",
+        "COMBINACIONES": [],
+        "INFO": "Teatro Colón / Plaza Lavalle / Palacio de Justicia"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.385142, -34.601587] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 404,
+        "ESTACION": "CALLAO",
+        "LINEA": "D",
+        "DIRECCION": "Av. Córdoba y Av. Callao",
+        "COMBINACIONES": [],
+        "INFO": "Teatro Cervantes (cercanía)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.393125, -34.599639] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 405,
+        "ESTACION": "FACULTAD DE MEDICINA",
+        "LINEA": "D",
+        "DIRECCION": "Av. Córdoba y Junín",
+        "COMBINACIONES": [],
+        "INFO": "Plaza Houssay / Facultades UBA"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.397923, -34.599757] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 406,
+        "ESTACION": "PUEYRREDON",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Av. Pueyrredón",
+        "COMBINACIONES": ["H"],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.402395, -34.594425] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 407,
+        "ESTACION": "AGÜERO",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Agüero",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.407161, -34.591627] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 408,
+        "ESTACION": "BULNES",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Bulnes",
+        "COMBINACIONES": [],
+        "INFO": "Alto Palermo Shopping"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.411293, -34.588237] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 409,
+        "ESTACION": "R.SCALABRINI ORTIZ",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Av. Scalabrini Ortiz",
+        "COMBINACIONES": [],
+        "INFO": "Jardín Botánico (Acceso Norte)"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.415955, -34.585155] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 410,
+        "ESTACION": "PLAZA ITALIA",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Av. Sarmiento",
+        "COMBINACIONES": [],
+        "INFO": "La Rural / Ecoparque / Jardín Botánico"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.421196, -34.581411] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 411,
+        "ESTACION": "PALERMO",
+        "LINEA": "D",
+        "DIRECCION": "Av. Santa Fe y Av. Juan B. Justo",
+        "COMBINACIONES": [],
+        "INFO": "Puente Pacífico / Transbordo Tren San Martín"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.425711, -34.578422] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 412,
+        "ESTACION": "MINISTRO CARRANZA",
+        "LINEA": "D",
+        "DIRECCION": "Av. Cabildo y Av. Dorrego",
+        "COMBINACIONES": [],
+        "INFO": "Transbordo Tren Mitre"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.435013, -34.575178] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 413,
+        "ESTACION": "OLLEROS",
+        "LINEA": "D",
+        "DIRECCION": "Av. Cabildo y Olleros",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.444668, -34.570012] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 414,
+        "ESTACION": "JOSE HERNANDEZ",
+        "LINEA": "D",
+        "DIRECCION": "Av. Cabildo y Virrey del Pino",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.452125, -34.566215] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 415,
+        "ESTACION": "JURAMENTO",
+        "LINEA": "D",
+        "DIRECCION": "Av. Cabildo y Av. Juramento",
+        "COMBINACIONES": [],
+        "INFO": "Centro Comercial Belgrano"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.456489, -34.562309] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 416,
+        "ESTACION": "CONGRESO DE TUCUMAN",
+        "LINEA": "D",
+        "DIRECCION": "Av. Cabildo y Av. Congreso",
+        "COMBINACIONES": [],
+        "INFO": "Terminal Norte Línea D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.462378, -34.555641] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 501,
+        "ESTACION": "BOLIVAR",
+        "LINEA": "E",
+        "DIRECCION": "Plaza de Mayo",
+        "COMBINACIONES": ["A", "D"],
+        "INFO": "Cabildo / Catedral"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.373684, -34.609242] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 502,
+        "ESTACION": "BELGRANO",
+        "LINEA": "E",
+        "DIRECCION": "Av. Belgrano y Av. Pte. Julio A. Roca",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.37758, -34.612849] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 503,
+        "ESTACION": "INDEPENDENCIA",
+        "LINEA": "E",
+        "DIRECCION": "Bernardo de Irigoyen y Av. Independencia",
+        "COMBINACIONES": ["C"],
+        "INFO": "Estación de combinación"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.381534, -34.617937] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 504,
+        "ESTACION": "SAN JOSE",
+        "LINEA": "E",
+        "DIRECCION": "San José y Av. San Juan",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.385148, -34.622339] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 505,
+        "ESTACION": "ENTRE RIOS - RODOLFO WALSH",
+        "LINEA": "E",
+        "DIRECCION": "Av. Entre Ríos y Av. San Juan",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.391511, -34.622719] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 506,
+        "ESTACION": "PICHINCHA",
+        "LINEA": "E",
+        "DIRECCION": "Pichincha y Av. San Juan",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.397068, -34.623109] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 507,
+        "ESTACION": "JUJUY",
+        "LINEA": "E",
+        "DIRECCION": "Av. Jujuy y Av. San Juan",
+        "COMBINACIONES": ["H"],
+        "INFO": "Estación de combinación"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.402936, -34.623865] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 508,
+        "ESTACION": "URQUIZA",
+        "LINEA": "E",
+        "DIRECCION": "Gral. Urquiza y Av. San Juan",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.40939, -34.624653] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 509,
+        "ESTACION": "BOEDO",
+        "LINEA": "E",
+        "DIRECCION": "Av. San Juan y Av. Boedo",
+        "COMBINACIONES": [],
+        "INFO": "Esquina Homero Manzi"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.415532, -34.625366] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 510,
+        "ESTACION": "AV. LA PLATA",
+        "LINEA": "E",
+        "DIRECCION": "Av. Eva Perón y Av. La Plata",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.426789, -34.627015] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 511,
+        "ESTACION": "MEDALLA MILAGROSA",
+        "LINEA": "E",
+        "DIRECCION": "Av. Eva Perón y Curapaligüe",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.450278, -34.636389] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 512,
+        "ESTACION": "VARELA",
+        "LINEA": "E",
+        "DIRECCION": "Av. Eva Perón y Varela",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.457891, -34.640137] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 513,
+        "ESTACION": "PLAZA DE LOS VIRREYES - EVA PERON",
+        "LINEA": "E",
+        "DIRECCION": "Av. Eva Perón y Av. Lafuente",
+        "COMBINACIONES": [],
+        "INFO": "Combinación con Premetro"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.461651, -34.643312] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 601,
         "ESTACION": "LAS HERAS",
         "LINEA": "H",
         "DIRECCION": "Av. Pueyrredón y Av. Gral. Las Heras",
         "COMBINACIONES": [],
         "INFO": "Facultad de Ingeniería / Plaza Mitre"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.397215575101853, -34.587461546426162]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.397215, -34.587461] }
     },
     {
       "type": "Feature",
       "properties": {
-        "ID": 86.0,
+        "ID": 602,
         "ESTACION": "SANTA FE",
         "LINEA": "H",
         "DIRECCION": "Av. Pueyrredón y Av. Santa Fe",
         "COMBINACIONES": ["D"],
         "INFO": "Estación de combinación"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-58.402330133810167, -34.594403550280326]
-      }
+      "geometry": { "type": "Point", "coordinates": [-58.40233, -34.594403] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 603,
+        "ESTACION": "CÓRDOBA",
+        "LINEA": "H",
+        "DIRECCION": "Av. Pueyrredón y Av. Córdoba",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.403721, -34.598455] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 604,
+        "ESTACION": "CORRIENTES",
+        "LINEA": "H",
+        "DIRECCION": "Av. Pueyrredón y Av. Corrientes",
+        "COMBINACIONES": ["B"],
+        "INFO": "Zona Comercial"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.40545, -34.60449] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 605,
+        "ESTACION": "ONCE - 30 DE DICIEMBRE",
+        "LINEA": "H",
+        "DIRECCION": "Av. Pueyrredón y Av. Rivadavia",
+        "COMBINACIONES": ["A"],
+        "INFO": "Terminal Ferroviaria Sarmiento / Plaza Miserere"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.406036, -34.608935] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 606,
+        "ESTACION": "VENEZUELA",
+        "LINEA": "H",
+        "DIRECCION": "Av. Jujuy y Venezuela",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.404731, -34.615242] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 607,
+        "ESTACION": "HUMBERTO 1°",
+        "LINEA": "H",
+        "DIRECCION": "Av. Jujuy y Humberto 1°",
+        "COMBINACIONES": ["E"],
+        "INFO": "Estación de combinación"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.402322, -34.623092] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 608,
+        "ESTACION": "INCLAN",
+        "LINEA": "H",
+        "DIRECCION": "Av. Jujuy e Inclán",
+        "COMBINACIONES": [],
+        "INFO": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.400969, -34.629375] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 609,
+        "ESTACION": "CASEROS",
+        "LINEA": "H",
+        "DIRECCION": "Av. Jujuy y Av. Caseros",
+        "COMBINACIONES": [],
+        "INFO": "Acceso a Hospital de Gastroenterología"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.398927, -34.63575] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 610,
+        "ESTACION": "PARQUE PATRICIOS",
+        "LINEA": "H",
+        "DIRECCION": "Av. Caseros y Monteagudo",
+        "COMBINACIONES": [],
+        "INFO": "Polo Tecnológico / Parque Patricios"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.405794, -34.638405] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 611,
+        "ESTACION": "HOSPITALES",
+        "LINEA": "H",
+        "DIRECCION": "Av. Almafuerte y Uspallata",
+        "COMBINACIONES": [],
+        "INFO": "Hospitales Penna y Churruca"
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.412385, -34.641268] }
     }
   ]
 }
