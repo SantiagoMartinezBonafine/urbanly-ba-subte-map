@@ -35,7 +35,6 @@ export const initMap = () => {
 
   let currentPopup: maplibregl.Popup | null = null;
 
-  // --- FUNCIÓN: Mostrar Popup de Estación ---
   const showStationPopup = (feature: any) => {
     if (currentPopup) currentPopup.remove();
 
@@ -47,7 +46,6 @@ export const initMap = () => {
     const direccion = props.DIRECCION || "Ubicación aproximada";
     const infoExtra = props.INFO || "";
 
-    // CORRECCIÓN: Parseo seguro de combinaciones
     let combinaciones = props.COMBINACIONES;
     if (typeof combinaciones === "string") {
       try {
@@ -60,8 +58,6 @@ export const initMap = () => {
       combinaciones = [];
     }
 
-    // Lógica de navegación (Anterior / Siguiente)
-    // Ordenamos por ID para saber cuál es la siguiente en el recorrido
     const estacionesDeLinea = (estaciones as any).features
       .filter((f: any) => f.properties.LINEA === lineaActual)
       .sort(
@@ -79,7 +75,6 @@ export const initMap = () => {
         ? estacionesDeLinea[currentIndex + 1]
         : null;
 
-    // Construcción del HTML del Popup
     const popupDiv = document.createElement("div");
     popupDiv.className = "popup-container";
     const colorLinea = LINE_COLORS[lineaActual] || "#333";
@@ -132,7 +127,6 @@ export const initMap = () => {
       </div>
     `;
 
-    // Event Listeners para botones Anterior/Siguiente
     const btnPrev = popupDiv.querySelector("#btn-prev");
     const btnNext = popupDiv.querySelector("#btn-next");
 
@@ -143,7 +137,6 @@ export const initMap = () => {
       btnNext.addEventListener("click", () => showStationPopup(nextStation));
     }
 
-    // Animación de cámara y creación del Popup
     map.flyTo({ center: coords, zoom: 15.5, speed: 1.5, curve: 1.2 });
 
     currentPopup = new maplibregl.Popup({
@@ -156,7 +149,6 @@ export const initMap = () => {
       .addTo(map);
   };
 
-  // --- FUNCIÓN: Buscador ---
   const initSearch = () => {
     const input = document.getElementById("station-search") as HTMLInputElement;
     const resultsContainer = document.getElementById("search-results");
@@ -205,7 +197,6 @@ export const initMap = () => {
     });
   };
 
-  // --- FUNCIÓN: Navegación Lateral por Líneas (NUEVO) ---
   const initLineNav = () => {
     const buttons = document.querySelectorAll(".line-btn");
 
@@ -215,14 +206,12 @@ export const initMap = () => {
           "data-line"
         );
 
-        // 1. Filtrar estaciones de la línea
         const estacionesLinea = (estaciones as any).features.filter(
           (f: any) => f.properties.LINEA === lineaSeleccionada
         );
 
         if (estacionesLinea.length === 0) return;
 
-        // 2. Ordenar por ID para encontrar la cabecera (ID más bajo)
         estacionesLinea.sort(
           (a: any, b: any) => Number(a.properties.ID) - Number(b.properties.ID)
         );
@@ -230,16 +219,14 @@ export const initMap = () => {
         const primeraEstacion = estacionesLinea[0];
         const coords = primeraEstacion.geometry.coordinates;
 
-        // 3. Volar hacia la estación
         map.flyTo({
           center: coords,
           zoom: 16,
           speed: 1.2,
           curve: 1.42,
-          pitch: 45, // Efecto 3D
+          pitch: 45,
         });
 
-        // 4. Abrir popup automáticamente al llegar (feedback visual)
         setTimeout(() => {
           showStationPopup(primeraEstacion);
         }, 1200);
@@ -247,12 +234,10 @@ export const initMap = () => {
     });
   };
 
-  // --- INIT: Carga del Mapa ---
   map.on("load", () => {
     initSearch();
-    initLineNav(); // Inicializar botones laterales
+    initLineNav();
 
-    // Controles de Zoom y Brújula
     document
       .getElementById("btn-zoom-in")
       ?.addEventListener("click", () => map.zoomIn());
@@ -273,7 +258,6 @@ export const initMap = () => {
       });
     });
 
-    // Cerrar popup al hacer clic en el mapa vacío
     map.on("click", (e) => {
       const features = map.queryRenderedFeatures(e.point, {
         layers: ["estaciones-layer"],
@@ -284,7 +268,6 @@ export const initMap = () => {
       }
     });
 
-    // Agregar Fuente y Capa de LÍNEAS (Trazado)
     map.addSource("subte-lineas", { type: "geojson", data: lineas as any });
     map.addLayer({
       id: "lineas-layer",
@@ -330,7 +313,6 @@ export const initMap = () => {
       },
     });
 
-    // Interacciones del Cursor (Mano al pasar por encima)
     map.on(
       "mouseenter",
       "estaciones-layer",
@@ -342,7 +324,6 @@ export const initMap = () => {
       () => (map.getCanvas().style.cursor = "")
     );
 
-    // Evento Click en Estación
     map.on("click", "estaciones-layer", (e: any) => {
       if (e.features && e.features.length > 0) {
         showStationPopup(e.features[0]);
