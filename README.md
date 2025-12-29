@@ -30,3 +30,7 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o supe
 git clone [https://github.com/TU_USUARIO/urbanly-ba-subte-map.git](https://github.com/TU_USUARIO/urbanly-ba-subte-map.git)
 cd urbanly-ba-subte-map
 ```
+
+### 3. Correr la aplicación
+
+npm run dev

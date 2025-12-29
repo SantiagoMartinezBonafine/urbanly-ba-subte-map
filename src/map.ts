@@ -2,7 +2,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import estaciones from "./data/estacionesdesubte.json";
-import lineas from "./data/reddesubterraneo1.json";
+import lineas from "./data/reddesubterraneo.json";
 
 export const initMap = () => {
   const map = new maplibregl.Map({
