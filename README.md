@@ -1,36 +1,64 @@
-# Urbanly - Mapa de Subtes CABA
+# Urbanly - Mapa Interactivo del Subte de Buenos Aires
 
-Esta aplicación es una herramienta de visualización geoespacial que muestra la red de subterráneos de la Ciudad Autónoma de Buenos Aires, incluyendo sus líneas y estaciones. El proyecto fue desarrollado como parte de un desafío técnico para **Urbanly**.
+Una aplicación web moderna de visualización geoespacial que permite explorar la red de subterráneos de la Ciudad de Buenos Aires con una experiencia inmersiva y animación 3D.
 
-## Características
+## 🚀 Características Principales
 
-- Visualización de mapa base utilizando **OpenStreetMap**.
-- Renderizado de trazas de líneas de subte (capas vectoriales).
-- Ubicación precisa de estaciones con marcadores.
-- Desarrollado con **MapLibre GL JS** y **TypeScript**.
+- **Mapa Vectorial Interactivo:** Basado en OpenStreetMap y renderizado con MapLibre GL JS.
+- **Experiencia 3D Cinematográfica:** Animaciones de cámara ("FlyTo") con inclinación y rotación al navegar entre estaciones.
+- **Modo 3D/2D Conmutable:** Botón dedicado para alternar entre una vista cenital plana y una vista inmersiva con perspectiva.
+- **Buscador Inteligente:** Búsqueda en tiempo real de estaciones con sugerencias automáticas.
+- **Navegación Secuencial:** Botones de "Anterior" y "Siguiente" dentro de cada estación para recorrer la línea virtualmente.
+- **Panel de Líneas (Line Nav):** Acceso rápido a las cabeceras de cada línea (A, B, C, D, E, H) mediante una interfaz lateral estilo "Glassmorphism".
+- **Información Detallada:** Visualización de combinaciones, direcciones y puntos de interés.
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías Utilizadas
 
-- [MapLibre GL JS](https://maplibre.org/) - Motor de mapas.
-- [TypeScript](https://www.typescriptlang.org/) - Lenguaje de programación.
-- [Vite](https://vitejs.dev/) - Herramienta de empaquetado y servidor de desarrollo.
-- [GeoJSON](https://geojson.org/) - Formato de datos geoespaciales.
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Mapa & Renderizado:** [MapLibre GL JS](https://maplibre.org/)
+- **Empaquetador (Bundler):** [Vite](https://vitejs.dev/)
+- **Estilos:** CSS3 (Variables CSS, Flexbox, Backdrop-filter).
+- **Datos:** GeoJSON customizado para trazados y estaciones.
 
-Instalación y Configuración
+## 📦 Instalación y Uso
 
-Sigue estos pasos para ejecutar el proyecto localmente:
+Sigue estos pasos para correr el proyecto localmente:
 
-### 1. Requisitos previos
+1.  **Clonar el repositorio:**
 
-Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o superior).
+    ```bash
+    git clone [https://github.com/tu-usuario/urbanly-subte.git](https://github.com/tu-usuario/urbanly-subte.git)
+    cd urbanly-subte
+    ```
 
-### 2. Clonar el repositorio
+2.  **Instalar dependencias:**
 
-```bash
-git clone [https://github.com/TU_USUARIO/urbanly-ba-subte-map.git](https://github.com/TU_USUARIO/urbanly-ba-subte-map.git)
-cd urbanly-ba-subte-map
+    ```bash
+    npm install
+    ```
+
+3.  **Ejecutar el servidor de desarrollo:**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Abrir en el navegador:**
+    Ingresar en `http://localhost:5173` (o el puerto que indique la terminal).
+
+## 📂 Estructura del Proyecto
+
+```text
+/
+├── public/              # Assets estáticos
+├── src/
+│   ├── data/            # Archivos GeoJSON (Datos crudos)
+│   │   ├── estacionesdesubte.json
+│   │   └── reddesubterraneo.json
+│   ├── main.ts          # Punto de entrada
+│   ├── map.ts          # Lógica principal del mapa y UI
+│   └── style.css        # Estilos globales
+├── index.html           # HTML base
+├── package.json         # Dependencias
+└── tsconfig.json        # Configuración de TypeScript
 ```
-
-### 3. Correr la aplicación
-
-npm run dev
