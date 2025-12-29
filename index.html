@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urbanly - Subte Map</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8" />
-    <title>Urbanly - Subte Map</title>
+
     <style>
       body,
       html {
         margin: 0;
         padding: 0;
         height: 100%;
+        overflow: hidden; /* Importante para evitar scrollbars */
       }
       #map {
         width: 100%;
@@ -24,10 +28,42 @@
   </head>
   <body>
     <div id="map"></div>
-    <div id="map"></div>
+
+    <div class="search-container">
+      <div class="search-box">
+        <svg
+          class="search-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="station-search"
+          placeholder="Buscar estación..."
+          autocomplete="off"
+        />
+        <button id="clear-search" class="clear-btn" style="display: none">
+          ✕
+        </button>
+      </div>
+      <div id="search-results" class="results-list"></div>
+    </div>
 
     <div class="custom-controls">
-      <button id="btn-compass" class="control-btn" title="Restablecer Norte">
+      <button
+        id="btn-compass"
+        class="control-btn"
+        title="Centrar y orientar Norte"
+      >
         <svg
           width="24"
           height="24"
@@ -42,7 +78,7 @@
         </svg>
       </button>
       <div class="divider"></div>
-      <button id="btn-zoom-in" class="control-btn" title="Zoom In">
+      <button id="btn-zoom-in" class="control-btn" title="Acercar">
         <svg
           width="24"
           height="24"
@@ -58,7 +94,7 @@
         </svg>
       </button>
       <div class="divider"></div>
-      <button id="btn-zoom-out" class="control-btn" title="Zoom Out">
+      <button id="btn-zoom-out" class="control-btn" title="Alejar">
         <svg
           width="24"
           height="24"
@@ -73,6 +109,7 @@
         </svg>
       </button>
     </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
