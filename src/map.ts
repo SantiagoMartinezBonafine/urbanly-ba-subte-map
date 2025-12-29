@@ -1,9 +1,9 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-// Importación de datos
 import estaciones from "./data/estacionesdesubte.json";
-import lineas from "./data/reddesubterraneo.json";
+import lineas from "./data/reddesubterraneo1.json";
+
 export const initMap = () => {
   const map = new maplibregl.Map({
     container: "map",
@@ -24,30 +24,42 @@ export const initMap = () => {
   });
 
   map.on("load", () => {
-    // Fuente de Líneas
     map.addSource("subte-lineas", {
       type: "geojson",
       data: lineas as any,
     });
 
-    // Capa de Líneas (usando los colores del GeoJSON)
     map.addLayer({
       id: "lineas-layer",
       type: "line",
       source: "subte-lineas",
       paint: {
         "line-width": 4,
-        "line-color": ["coalesce", ["get", "color"], "#000000"],
+        "line-color": [
+          "match",
+          ["get", "LINEASUB"], // Leemos la propiedad que vi en tu archivo
+          "LINEA A",
+          "#00ADD0", // Celeste
+          "LINEA B",
+          "#E2231A", // Rojo
+          "LINEA C",
+          "#006CA8", // Azul
+          "LINEA D",
+          "#00A650", // Verde
+          "LINEA E",
+          "#6D2077", // Violeta
+          "LINEA H",
+          "#FFB900", // Amarillo
+          "#000000", // Color por defecto (negro) si no coincide
+        ],
       },
     });
 
-    // Fuente de Estaciones
     map.addSource("subte-estaciones", {
       type: "geojson",
       data: estaciones as any,
     });
 
-    // Capa de Estaciones (Círculos blancos con borde negro)
     map.addLayer({
       id: "estaciones-layer",
       type: "circle",
@@ -70,11 +82,20 @@ export const initMap = () => {
 
     map.on("click", "estaciones-layer", (e: any) => {
       const coordinates = e.features[0].geometry.coordinates.slice();
-      const name = e.features[0].properties.name;
+
+      const nombreEstacion = e.features[0].properties.ESTACION;
+      const linea = e.features[0].properties.LINEA;
 
       new maplibregl.Popup()
         .setLngLat(coordinates)
-        .setHTML(`<strong>Estación:</strong> ${name}`)
+        .setHTML(
+          `
+          <div style="font-family: sans-serif;">
+            <h3 style="margin:0;">${nombreEstacion}</h3>
+            <p style="margin:5px 0;">Línea ${linea}</p>
+          </div>
+        `
+        )
         .addTo(map);
     });
   });
