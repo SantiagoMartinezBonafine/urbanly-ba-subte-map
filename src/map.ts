@@ -1,6 +1,5 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-
 import estaciones from "./data/estacionesdesubte.json";
 import lineas from "./data/reddesubterraneo.json";
 
@@ -14,7 +13,7 @@ export const initMap = () => {
           type: "raster",
           tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
           tileSize: 256,
-          attribution: "© OpenStreetMap contributors",
+          attribution: "&copy; OpenStreetMap contributors",
         },
       },
       layers: [{ id: "osm-layer", type: "raster", source: "osm" }],
@@ -24,37 +23,38 @@ export const initMap = () => {
   });
 
   map.on("load", () => {
-    map.addSource("subte-lineas", {
-      type: "geojson",
-      data: lineas as any,
-    });
-
+    map.addSource("subte-lineas", { type: "geojson", data: lineas as any });
     map.addLayer({
       id: "lineas-layer",
       type: "line",
       source: "subte-lineas",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
       paint: {
-        "line-width": 4,
+        "line-width": 3,
         "line-color": [
           "match",
-          ["get", "LINEASUB"], // Leemos la propiedad que vi en tu archivo
+          ["get", "LINEASUB"],
           "LINEA A",
-          "#00ADD0", // Celeste
+          "#00ADD0",
           "LINEA B",
-          "#E2231A", // Rojo
+          "#E2231A",
           "LINEA C",
-          "#006CA8", // Azul
+          "#006CA8",
           "LINEA D",
-          "#00A650", // Verde
+          "#00A650",
           "LINEA E",
-          "#6D2077", // Violeta
+          "#6D2077",
           "LINEA H",
-          "#FFB900", // Amarillo
-          "#000000", // Color por defecto (negro) si no coincide
+          "#FFB900",
+          "#333333",
         ],
       },
     });
 
+    // --- ESTACIONES (Puntos Minimalistas) ---
     map.addSource("subte-estaciones", {
       type: "geojson",
       data: estaciones as any,
@@ -65,13 +65,15 @@ export const initMap = () => {
       type: "circle",
       source: "subte-estaciones",
       paint: {
-        "circle-radius": 6,
+        // AQUÍ ESTÁ EL CAMBIO DE TAMAÑO:
+        "circle-radius": 3.5, // Más pequeños (antes 6)
         "circle-color": "#FFFFFF",
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 1.5, // Borde más fino
+        "circle-stroke-color": "#222222",
       },
     });
 
+    // --- INTERACCIÓN ---
     map.on("mouseenter", "estaciones-layer", () => {
       map.getCanvas().style.cursor = "pointer";
     });
@@ -82,17 +84,26 @@ export const initMap = () => {
 
     map.on("click", "estaciones-layer", (e: any) => {
       const coordinates = e.features[0].geometry.coordinates.slice();
-
-      const nombreEstacion = e.features[0].properties.ESTACION;
+      const nombre = e.features[0].properties.ESTACION;
       const linea = e.features[0].properties.LINEA;
 
-      new maplibregl.Popup()
+      // 1. ANIMACIÓN DE LA CÁMARA (Efecto "fly to")
+      map.flyTo({
+        center: coordinates,
+        zoom: 14, // Hace un zoom suave hacia la estación
+        speed: 1.2,
+        curve: 1.4,
+        essential: true,
+      });
+
+      // 2. POPUP CON NUEVO HTML PARA EL CSS
+      new maplibregl.Popup({ closeButton: false, offset: 10 }) // offset separa el popup del punto
         .setLngLat(coordinates)
         .setHTML(
           `
-          <div style="font-family: sans-serif;">
-            <h3 style="margin:0;">${nombreEstacion}</h3>
-            <p style="margin:5px 0;">Línea ${linea}</p>
+          <div class="popup-container">
+            <div class="popup-linea">Línea ${linea}</div>
+            <h3 class="popup-estacion">${nombre}</h3>
           </div>
         `
         )

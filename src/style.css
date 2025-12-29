@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, sans-serif; /* Usamos Inter */
 }
 
 body,
@@ -10,21 +10,58 @@ html {
   height: 100%;
   overflow: hidden;
 }
-
 #map {
   width: 100vw;
   height: 100vh;
 }
 
-/* Estilo para los Popups de MapLibre */
+/* --- Estilo Minimalista del Popup --- */
 .maplibregl-popup-content {
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  border: 1px solid #ddd;
+  padding: 0; /* Quitamos padding default para diseñar nosotros */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: none;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Animación de entrada */
 }
 
 .maplibregl-popup-close-button {
-  padding: 5px;
+  display: none; /* Ocultamos la X para un look más limpio (opcional) */
+}
+
+.maplibregl-popup-tip {
+  border-top-color: #fff;
+}
+
+/* Animación personalizada */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Diseño interno del popup */
+.popup-container {
+  padding: 12px 16px;
+  min-width: 160px;
+}
+.popup-linea {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.popup-estacion {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
 }
